@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Uzbek Audio AI Service</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+<div class="container">
+    <h1>Uzbek Audio AI Service</h1>
+
+    <section>
+        <h2>Categories (CRUD)</h2>
+        <form id="category-form">
+            <input type="text" id="cat-name" placeholder="Category name" required />
+            <input type="text" id="cat-desc" placeholder="Description (optional)" />
+            <input type="text" id="cat-keywords" placeholder="Keywords (comma-separated)" />
+            <button type="submit">Add Category</button>
+        </form>
+        <table id="categories-table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Keywords</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Upload Audio</h2>
+        <form id="audio-form" enctype="multipart/form-data">
+            <input type="file" id="audio-file" name="file" accept="audio/*" required />
+            <select id="override-category" name="override_category_id">
+                <option value="">Auto categorize</option>
+            </select>
+            <button type="submit">Upload & Analyze</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Audio Analyses</h2>
+        <table id="audio-table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Original Filename</th>
+                <th>Category</th>
+                <th>Confidence</th>
+                <th>Transcript (preview)</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Summary</h2>
+        <table id="summary-table">
+            <thead>
+            <tr>
+                <th>Category</th>
+                <th>Count</th>
+                <th>Avg Confidence</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
+
